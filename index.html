@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Chat | DeepSeek-R1</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <!-- Markdown & Highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">✨</span>
+                    <h1>Lumina Chat</h1>
+                </div>
+                <button id="new-chat-btn" class="primary-btn">
+                    <span>+</span> New Chat
+                </button>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- Chat history items will appear here -->
+            </div>
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="status-dot" id="ollama-status"></span>
+                    <span id="status-text">Checking Ollama...</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <header class="chat-header">
+                <div class="chat-info">
+                    <h2 id="current-chat-title">New Conversation</h2>
+                    <p id="model-badge">deepseek-r1:1.5b</p>
+                </div>
+                <div class="chat-actions">
+                    <button id="clear-chat-btn" title="Clear current chat">🗑️</button>
+                </div>
+            </header>
+
+            <div class="messages-container" id="messages-container">
+                <div class="welcome-screen" id="welcome-screen">
+                    <div class="welcome-content">
+                        <span class="welcome-icon">🧠</span>
+                        <h2>How can I help you today?</h2>
+                        <p>DeepSeek-R1 is ready to think and assist.</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="input-area">
+                <div class="input-container">
+                    <textarea id="chat-input" placeholder="Type your message..." rows="1"></textarea>
+                    <button id="send-btn" disabled>
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <p class="disclaimer">DeepSeek-R1 may provide inaccurate information. Check important facts.</p>
+            </footer>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
